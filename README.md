@@ -1,5 +1,7 @@
 # Vigía
 
+[English version](README.en.md)
+
 Tengo una watchlist de cryptos, acciones y ETFs, y una mala costumbre: abrir la app del
 broker "solo para mirar" varias veces al día. Vigía existe para invertir esa relación.
 Yo defino umbrales concretos ("avísame si el RSI semanal de BTC baja de 30", "si IBE.MC
@@ -10,7 +12,7 @@ Vigía no opina, no recomienda y no predice. No se conecta a ningún broker ni e
 con claves de trading: solo lee precios públicos y compara números con los umbrales que
 yo le puse. Es una herramienta de monitorización personal, no un asesor.
 
-Es la pareja de [Bóveda](https://github.com/seakerop): la bóveda guarda, el vigía avisa.
+Es la pareja de [Bóveda](https://github.com/seakerop/boveda): la bóveda guarda, el vigía avisa.
 Y son proyectos separados a propósito: Bóveda promete que nada sale de tu dispositivo,
 y Vigía necesita justo lo contrario, algo despierto 24/7 aunque mi móvil esté apagado.
 
@@ -83,7 +85,7 @@ testeado: dispara, calla, rearma, vuelve a disparar.
 ## Avisos con contexto
 
 Un aviso de "RSI por debajo de 30" no sirve de mucho si no sé qué suele pasar después. Al
-hacer el [Termómetro](https://github.com/seakerop) descubrí que muchas de estas reglas no
+hacer el [Termómetro](https://github.com/seakerop/termometro) descubrí que muchas de estas reglas no
 significan lo que se cree: en Bitcoin, un RSI alto ha venido seguido de más subidas, no
 de caídas, y comprar la sobreventa ha ido peor que comprar cualquier día en los últimos
 años.
