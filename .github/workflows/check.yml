@@ -1,0 +1,33 @@
+# El cron de Vigía: una pasada cada 2 horas. En el minuto 17 a propósito:
+# los minutos redondos van sobrecargados en Actions y se retrasan más.
+#
+# OJO: GitHub desactiva los workflows con schedule tras 60 días sin actividad
+# en el repo (avisan por email; cualquier commit lo reactiva). El botón de
+# workflow_dispatch sirve para lanzar una pasada a mano y para reactivarlo.
+
+name: check
+
+# El schedule está apagado mientras uso el modo local (sin Upstash ni Telegram no hay nada que
+# vigilar desde aquí). Para el modo servidor: configurar los secrets y descomentar estas dos líneas.
+on:
+  # schedule:
+  #   - cron: '17 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # check.mjs no tiene dependencias: sin npm install, la pasada es rápida
+      - run: node scripts/check.mjs
+        env:
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          YAHOO_PROXY_URL: ${{ secrets.YAHOO_PROXY_URL }}
