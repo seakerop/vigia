@@ -1,7 +1,7 @@
 // Service worker: network-first con caché de respaldo para el shell de la app.
 // Sin conexión la app abre con lo último cacheado; /api y las APIs de mercado
 // no se cachean nunca (los datos frescos son el producto).
-const CACHE = 'vigia-v2'; // subir al cambiar la app para que los móviles no se queden con la versión vieja
+const CACHE = 'vigia-v3'; // subir al cambiar la app para que los móviles no se queden con la versión vieja
 
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => {

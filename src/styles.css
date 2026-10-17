@@ -313,3 +313,9 @@ input:focus, select:focus { border-color: var(--accent); }
 .alert-banner-ctx { color: var(--ink-2); font-size: 12.5px; line-height: 1.5; margin-top: 2px; }
 .alert-banner-actions { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
 .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.tester-table .chip { white-space: nowrap; font-size: 11px; padding: 1px 7px; }
+@media (max-width: 420px) {
+  .tester { padding: 10px 11px; }
+  .tester-table { font-size: 12.5px; }
+  .tester-table th, .tester-table td { padding-left: 4px; padding-right: 4px; }
+}

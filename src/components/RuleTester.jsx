@@ -25,9 +25,9 @@ export function useBacktest(asset, rule) {
 }
 
 const VEREDICTO = {
-  mejor: { txt: 'subió más de lo normal', cls: 'v-mejor' },
-  peor: { txt: 'subió menos de lo normal', cls: 'v-peor' },
-  igual: { txt: 'puede ser casualidad', cls: 'v-igual' },
+  mejor: { txt: 'mejor que lo normal', cls: 'v-mejor' },
+  peor: { txt: 'peor que lo normal', cls: 'v-peor' },
+  igual: { txt: 'puede ser azar', cls: 'v-igual' },
   pocos: { txt: 'pocos casos', cls: 'v-pocos' },
 };
 
